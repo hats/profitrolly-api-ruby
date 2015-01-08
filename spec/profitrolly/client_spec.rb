@@ -9,8 +9,8 @@ describe Profitrolly::Client do
     end
 
     describe '.activate' do
-      it 'should return an array with correct activation data' do
-        expect(@client.activate).to eq({ status: 'ok', offer_id: 234 })
+      it 'should return a hash with correct activation data' do
+        expect(@client.activate(code: 'some-code')).to eq({ 'status' => 'ok', 'offer_id' => 234 })
       end
     end
 
