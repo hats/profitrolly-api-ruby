@@ -1,5 +1,8 @@
 require 'profitrolly/version'
+require 'profitrolly/client'
 
 module Profitrolly
-  # Your code goes here...
+  def self.client(token:)
+    Client.new(token: token)
+  end
 end
