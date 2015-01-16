@@ -18,6 +18,10 @@ module Profitrolly
       @data = { token: @token, code: code }
       resp = response :activate
       resp.body
+    rescue Faraday::ResourceNotFound => error
+      { error: error.message, code: 404 }
+    rescue Faraday::ClientError => error
+      { error: error.message, code: 401 }
     end
 
     private
