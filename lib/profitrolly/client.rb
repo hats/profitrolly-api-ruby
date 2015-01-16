@@ -31,7 +31,7 @@ module Profitrolly
         faraday.request  :json
         faraday.response :json, :content_type => /\bjson$/
         # faraday.response :logger
-        faraday.response :raise_error
+        # faraday.response :raise_error
         faraday.adapter  Faraday.default_adapter
       end
       conn.post do |req|
