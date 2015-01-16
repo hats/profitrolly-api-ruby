@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'profitrolly/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'profitrolly'
+  spec.name          = 'profitrolly-api-ruby'
   spec.version       = Profitrolly::VERSION
   spec.authors       = ['Pavel Bozhenik']
   spec.email         = ['bozhenik@gmail.com']
