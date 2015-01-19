@@ -32,6 +32,9 @@ your_profit_code   = 'ccccccccccccccccccccccccccccc'
 @client.activate(
   code: your_profit_code
 )
+
+# получение статуса профита
+@client.available?(code)
 ```
 
 ## Ваш вклад в проект
