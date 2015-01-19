@@ -14,5 +14,14 @@ describe Profitrolly::Client do
       end
     end
 
+    describe '.available?' do
+      it 'should return true for available code' do
+        expect(@client.available?('AVAILABLE_CODE')).to eq true
+      end
+      it 'should return false for unavailable code' do
+        expect(@client.available?('UNAVAILABLE_CODE')).to eq false
+      end
+    end
+
   end
 end
