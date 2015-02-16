@@ -27,8 +27,13 @@ module Profitrolly
 
     def available?(code)
       resp = get :available, code
-      resp.body.has_key? ('code') and resp.body.has_key? ('owned_at') and resp.body.has_key? ('used_at')\
-      and resp.body['code'] == code and Time.parse(resp.body['owned_at']) < Time.now and resp.body['used_at'] == ''
+      (
+        resp.body.has_key?('used_at') && resp.body['used_at'].empty?
+      ) && (
+        resp.body.has_key?('code') && resp.body['code'] == code
+      ) && (
+        resp.body.has_key?('owned_at') && Time.parse(resp.body['owned_at']) < Time.now
+      )
     end
 
     private
