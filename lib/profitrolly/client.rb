@@ -33,6 +33,8 @@ module Profitrolly
         resp.body.has_key?('code') && resp.body['code'] == code
       ) && (
         resp.body.has_key?('owned_at') && Time.parse(resp.body['owned_at']) < Time.now
+      ) && (
+      resp.body.has_key?('expired_at') && Time.parse(resp.body['expired_at']) > Time.now
       )
     end
 
